@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '4.x'
+      - '4.next'
+      - '5.x'
+  pull_request:
+    branches:
+      - '*'
+
+permissions:
+  contents: read
+
+jobs:
+  front-format-check:
+    name: Front Format Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 20.15
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.15
+
+      - name: npm install
+        run: npm install
+
+      - name: Run Format
+        run: npm run format-check
+
+  front-static-analysis:
+    name: Front Static Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 20.15
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.15
+
+      - name: npm install
+        run: npm install
+
+      - name: Run Lint
+        run: npm run lint
+
+  front-build:
+    name: Front Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 20.15
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.15
+
+      - name: npm install
+        run: npm install
+
+      - name: Run Build
+        run: npm run build
