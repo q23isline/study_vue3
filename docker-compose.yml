@@ -1,0 +1,21 @@
+volumes:
+  node:
+
+services:
+  front:
+    build:
+      context: .
+      dockerfile: ./docker/local/node/Dockerfile
+    container_name: front
+    ports:
+      - 5173:5173
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/app
+      - ./logs/front:/root/.npm/_logs
+      - node:/app/node_modules
+    # Docker 内で Vite を `npm run dev` してもアクセスできるようにする
+    command: npm run dev -- --host
+    stdin_open: true
+    tty: true
