@@ -63,6 +63,10 @@ docker compose exec front npm run build
 
 - <http://localhost:5173>
 
+## dev tool の起動
+
+- <http://localhost:5173/__devtools__/>
+
 ## フロントエンド静的解析単体実行
 
 ```bash
