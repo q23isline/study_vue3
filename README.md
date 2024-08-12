@@ -73,3 +73,15 @@ docker compose exec front npm run lint
 ```bash
 docker compose exec front npm run format-check
 ```
+
+## VSCode 推奨設定
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+```
