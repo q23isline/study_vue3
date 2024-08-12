@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { AppApi } from '@/api/AppApi'
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
 
 interface ApiResponse {
   id: string
@@ -13,7 +13,7 @@ const error = ref<string | null>(null)
 
 onMounted(async () => {
   try {
-    const response = await axios.get<ApiResponse>('http://localhost:3000/api/users')
+    const response = await AppApi.get<ApiResponse>('/api/users')
     data.value = response.data
   } catch (err) {
     error.value = (err as Error).message
