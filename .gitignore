@@ -30,3 +30,10 @@ coverage
 *.tsbuildinfo
 
 !.vscode/settings.json.default
+
+# ログファイル
+!/logs/
+/logs/*
+!/logs/front/
+/logs/front/*
+!/logs/front/.gitkeep
