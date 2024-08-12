@@ -2,6 +2,7 @@
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 ![releases](https://img.shields.io/github/release/q23isline/study_vue3.svg?logo=github)
+[![GitHub Actions](https://github.com/q23isline/study_vue3/actions/workflows/ci.yml/badge.svg)](https://github.com/q23isline/study_vue3/actions/workflows/ci.yml)
 [![Open in Visual Studio Code](https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=555555&color=007acc&logoColor=007acc)](https://open.vscode.dev/q23isline/study_vue3)
 
 [![Node.js](https://img.shields.io/static/v1?logo=node.js&label=Node.js&message=v20.15.0&labelColor=555555&color=339933&logoColor=339933)](https://nodejs.org)
