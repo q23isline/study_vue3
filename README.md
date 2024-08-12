@@ -1,39 +1,69 @@
 # study_vue3
 
-This template should help get you started developing with Vue 3 in Vite.
+[![LICENSE](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+![releases](https://img.shields.io/github/release/q23isline/study_vue3.svg?logo=github)
+[![Open in Visual Studio Code](https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=555555&color=007acc&logoColor=007acc)](https://open.vscode.dev/q23isline/study_vue3)
 
-## Recommended IDE Setup
+[![Node.js](https://img.shields.io/static/v1?logo=node.js&label=Node.js&message=v20.15.0&labelColor=555555&color=339933&logoColor=339933)](https://nodejs.org)
+[![npm](https://img.shields.io/static/v1?logo=npm&label=npm&message=v10.7.0&labelColor=555555&color=CB3837&logoColor=CB3837)](https://www.npmjs.com/)
+[![Vue.js](https://img.shields.io/static/v1?logo=vue.js&label=Vue.js&message=v3.4.37&labelColor=555555&color=4FC08D&logoColor=4FC08D)](https://ja.vuejs.org/)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## はじめにやること
 
-## Type Support for `.vue` Imports in TS
+1. ソースダウンロード
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+    ```bash
+    git clone 'https://github.com/q23isline/study_vue3.git'
+    ```
 
-## Customize configuration
+2. リポジトリのカレントディレクトリへ移動
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+    ```bash
+    cd study_vue3
+    ```
 
-## Project Setup
+3. アプリ立ち上げ
 
-```sh
-npm install
+    ```bash
+    docker compose build --no-cache
+    docker compose down -v
+    sudo rm -rf node_modules
+    docker create -it --name front study_vue3-front bash
+    sudo docker cp front:/app/node_modules $(pwd)
+    docker rm -f front
+    sudo chown -R $(whoami):$(whoami) node_modules
+    docker compose up -d
+    docker compose exec front npm run build
+    ```
+
+## 日常的にやること
+
+### システム起動
+
+```bash
+docker compose up -d
 ```
 
-### Compile and Hot-Reload for Development
+### システム終了
 
-```sh
-npm run dev
+```bash
+docker compose down
 ```
 
-### Type-Check, Compile and Minify for Production
+### フロントエンドのビルド
 
-```sh
-npm run build
+```bash
+docker compose exec front npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## 動作確認
 
-```sh
-npm run lint
+### URL
+
+- <http://localhost:5173>
+
+## フロントエンド静的解析単体実行
+
+```bash
+docker compose exec front npm run lint
 ```
