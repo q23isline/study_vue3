@@ -28,3 +28,10 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# ログファイル
+!/logs/
+/logs/*
+!/logs/front/
+/logs/front/*
+!/logs/front/.gitkeep
