@@ -1,0 +1,12 @@
+SET NAMES utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `users` (
+    `id` CHAR(36) NOT NULL COMMENT 'ID',
+    `account_name` VARCHAR(50) NOT NULL COMMENT 'ログインID',
+    `password` VARCHAR(255) COMMENT 'パスワード',
+    `name` VARCHAR(50) NOT NULL COMMENT '姓名',
+    `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '作成日',
+    `modified` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `users_IDX1` (`account_name`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
