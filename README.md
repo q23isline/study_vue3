@@ -5,6 +5,7 @@
 [![GitHub Actions](https://github.com/q23isline/study_vue3/actions/workflows/ci.yml/badge.svg)](https://github.com/q23isline/study_vue3/actions/workflows/ci.yml)
 [![Open in Visual Studio Code](https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=555555&color=007acc&logoColor=007acc)](https://open.vscode.dev/q23isline/study_vue3)
 
+[![MySQL](https://img.shields.io/static/v1?logo=mysql&label=MySQL&message=v8.3&labelColor=555555&color=4479A1&logoColor=4479A1)](https://dev.mysql.com)
 [![Node.js](https://img.shields.io/static/v1?logo=node.js&label=Node.js&message=v20.15.0&labelColor=555555&color=339933&logoColor=339933)](https://nodejs.org)
 [![npm](https://img.shields.io/static/v1?logo=npm&label=npm&message=v10.7.0&labelColor=555555&color=CB3837&logoColor=CB3837)](https://www.npmjs.com/)
 [![Vue.js](https://img.shields.io/static/v1?logo=vue.js&label=Vue.js&message=v3.4.37&labelColor=555555&color=4FC08D&logoColor=4FC08D)](https://ja.vuejs.org/)
@@ -37,7 +38,13 @@
     cp .vscode/settings.json.default .vscode/settings.json
     ```
 
-4. アプリ立ち上げ
+4. DB コンテナ起動時に Permission Denied で起動できない状態にならないように権限付与する
+
+    ```bash
+    sudo chmod -R ugo+w logs
+    ```
+
+5. アプリ立ち上げ
 
     ```bash
     docker compose build --no-cache
